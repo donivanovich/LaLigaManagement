@@ -1,0 +1,24 @@
+# PyBancoFutbol 📊⚽
+
+API REST completa para gestión de **presidentes de clubes**, **jugadores** y **pagos** con autenticación JWT + MongoDB. Cliente interactivo con tablas ASCII.
+
+## ✨ Características
+
+- 🔐 **Autenticación JWT** (login/register)
+- 👥 **Roles** (admin/user)
+- 👑 **CRUD Presidentes** (nombre, presupuesto)
+- ⚽ **CRUD Jugadores** (referencia a presidente)
+- 💰 **Pagos** (jugador → presidente, cantidad, estado)
+- 📊 **Tablas bonitas** en consola
+- 🛡️ **Validaciones** completas
+
+👤 Usuario: pybanco_user
+🔑 Contraseña: PyB4nc0P@ss2026!
+🗄️ Database: pybancodb
+☁️ Collections: users, presidentes, jugadores, pagos
+
+
+| Email            | Password | Rol   |
+| ---------------- | -------- | ----- |
+| donnie@gmail.com | 1234     | user  |
+| tebas@laliga.es  | 1234     | admin |
