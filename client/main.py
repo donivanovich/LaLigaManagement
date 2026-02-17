@@ -336,7 +336,7 @@ def menu_admin(token):
 
 if __name__ == "__main__":
     while True:
-        print("\n🎯 PyBanco Fútbol")
+        print("\nLaLiga Management")
         print("1. Login")
         print("2. Registrarse")
         print("3. Salir")
