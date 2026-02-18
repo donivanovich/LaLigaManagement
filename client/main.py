@@ -79,6 +79,10 @@ def crearPago(token):
         return
     
     pos_jug = int(input(f"\n📝 Jugador (1-{len(jugadores)}): ")) - 1
+    if pos_jug < 0 or pos_jug >= len(jugadores):
+            print("❌ Posición inválida")
+            return
+    
     jugador = jugadores[pos_jug]
     jugador_id = jugador['id']
     presidente_id = jugador.get('presidente_id')
@@ -87,6 +91,7 @@ def crearPago(token):
         print("❌ Jugador sin presidente asignado")
         return
     
+        
     print(f"✅ Jugador: {jugador.get('nombre', 'N/A')} (Presidente ID: {presidente_id})")
     
     try:
@@ -159,7 +164,7 @@ def imprimir(data, titulo):
     print("└" + "─" * (ancho_total - 2) + "┘")
 
 def eliminarJugador(token):
-    print("\n🗑️ ELIMINANDO JUGADOR")
+    print("\n🗑️  ELIMINANDO JUGADOR")
     
     jugadores = leerJugadores(token)
     imprimir(jugadores, "JUGADORES")

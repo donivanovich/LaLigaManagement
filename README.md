@@ -34,6 +34,6 @@ API REST completa para gestión de **presidentes de clubes**, **jugadores** y **
 
 Seleccionar un interprete distinto al del entorno virtual y ```cd ..```
 
-```cd ./client``` y ```pip install -r ./requirements.txt``` Para instalar las dependencias del cliente
+```cd ./LaLigaManagement/client``` y ```pip install -r ./requirements.txt``` Para instalar las dependencias del cliente
 
 Ejecutar el archivo ```main.py```
