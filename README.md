@@ -1,4 +1,4 @@
-# PyBancoFutbol 📊⚽
+# LaLigaManagement 📊⚽
 
 API REST completa para gestión de **presidentes de clubes**, **jugadores** y **pagos** con autenticación JWT + MongoDB. Cliente interactivo con tablas ASCII.
 
