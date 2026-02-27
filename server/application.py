@@ -19,6 +19,7 @@ users_col = db.users
 pres_col = db.presidentes
 jug_col = db.jugadores
 pag_col = db.pagos
+entrs_col = db.entrenadores
 
 app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY')
 jwt = JWTManager(app)
@@ -80,6 +81,16 @@ def get_jugadores():
         if 'presidente_id' in j:
             j['presidente_id'] = str(j['presidente_id'])
     return jsonify(jugs)
+
+@app.route('/entrenadores', methods=['GET'])
+@jwt_required()
+def get_entrenadores():
+    entrs = list(entrs_col.find())
+    for e in entrs:
+        e['id'] = str(e.pop('_id'))
+        if 'presidente_id' in e:
+            e['presidente_id'] = str(e['presidente_id'])
+    return jsonify(entrs)
 
 @app.route('/pagos', methods=['GET'])
 @jwt_required()

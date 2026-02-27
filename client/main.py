@@ -63,6 +63,11 @@ def leerJugadores(token):
     jugadores = data.json()
     return jugadores if jugadores else None
 
+def leerEntrenadores(token):
+    data = requests.get(f"{BASE_URL}/entrenadores", headers={"Authorization": f"Bearer {token}"})
+    entrenadores = data.json()
+    return entrenadores if entrenadores else None
+
 def leerPagos(token):
     data = requests.get(f"{BASE_URL}/pagos", headers={"Authorization": f"Bearer {token}"})
     pagos = data.json()
@@ -255,23 +260,27 @@ def menu_user(token):
     while True:
         print("\n=== USER MENU ===")
         print("1. Ver Presidentes")
-        print("2. Ver Jugadores")
-        print("3. Ver Pagos")
-        print("4. Actualizar Contraseña")
-        print("5. Logout")
+        print("2. Ver Entrenadores")
+        print("3. Ver Jugadores")
+        print("4. Ver Pagos")
+        print("5. Actualizar Contraseña")
+        print("6. Logout")
 
-        opcion = input("Elige (1-5): ")
+        opcion = input("Elige (1-6): ")
 
         if opcion == "1":
             imprimir(leerPresidentes(token), "PRESIDENTES")
 
         elif opcion == "2":
-            imprimir(leerJugadores(token), "JUGADORES")
+            imprimir(leerEntrenadores(token), "ENTRENADORES")
 
         elif opcion == "3":
-            imprimir(leerPagos(token), "PAGOS")
+            imprimir(leerJugadores(token), "JUGADORES")
 
         elif opcion == "4":
+            imprimir(leerPagos(token), "PAGOS")
+
+        elif opcion == "5":
             print("\n🔐 === CAMBIAR CONTRASEÑA ===")
     
             print("Ingresa tu contraseña ACTUAL:")
@@ -308,7 +317,7 @@ def menu_user(token):
                     error_msg = "Error desconocido"
                 print(f"❌ Error: {error_msg}")
 
-        elif opcion == "5":
+        elif opcion == "6":
             print("Logout")
             break
 
