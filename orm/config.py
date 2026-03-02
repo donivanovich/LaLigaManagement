@@ -1,0 +1,5 @@
+import os
+
+class Config:
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:1234@localhost/PYBancoProyecto"
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
